@@ -1,0 +1,21 @@
+<apex:page controller="LeadFormController" tabStyle="Lead" showHeader="true" sidebar="false" id="page">
+    <apex:sectionHeader title="T.Yoshikawa Labs" subTitle="Visualforce Sample Pages" />
+    <apex:form id="form">
+        <apex:pageBlock title="リード登録フォーム" id="block" mode="edit">
+            <apex:pageMessages id="msg" />
+            <apex:pageBlockButtons location="bottom" id="buttons">
+                <apex:commandButton value=" 次へ " action="{!doConfirmation}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="2">
+                <apex:inputField value="{!lead.LastName}" />
+                <apex:inputField value="{!lead.FirstName}" />
+                <apex:inputField value="{!lead.Phone}" />
+                <apex:inputField value="{!lead.Email}" />
+                <apex:inputField value="{!lead.Company}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1">
+                <apex:inputField value="{!lead.Description}" style="width: 90%" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

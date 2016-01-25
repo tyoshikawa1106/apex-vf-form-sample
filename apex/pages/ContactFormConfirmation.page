@@ -1,0 +1,26 @@
+<apex:page controller="ContactFormController" tabStyle="Contact" showHeader="true" sidebar="false" id="page">
+    <apex:sectionHeader title="T.Yoshikawa Labs" subTitle="Visualforce Sample Pages" />
+    <apex:form id="form">
+        <apex:actionFunction name="functionSave" action="{!doSave}" />
+        <apex:pageBlock title="取引先責任者登録フォーム・入力内容確認" id="block" mode="edit">
+            <apex:pageMessages id="msg" />
+            <apex:pageBlockButtons location="bottom" id="buttons">
+                <apex:commandButton value=" 修正 " action="{!doBack}" />
+                <apex:commandButton value=" 登録 " onclick="return saveBtnClick();" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="2">
+                <apex:outputField value="{!contact.LastName}" />
+                <apex:outputField value="{!contact.FirstName}" />
+                <apex:outputField value="{!contact.Phone}" />
+                <apex:outputField value="{!contact.Email}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" collapsible="false" title="添付ファイル">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="ファイル" />
+                    <apex:inputFile value="{!uploadFile}" filename="{!fileName}" filesize="{!fileSize}" title="ファイル添付" size="80" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:include pageName="FormScript" />
+</apex:page>

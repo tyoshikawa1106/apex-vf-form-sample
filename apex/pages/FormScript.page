@@ -1,0 +1,10 @@
+<apex:page >
+    <script type="text/javascript">
+        function saveBtnClick() {
+            if(window.confirm('登録します。よろしいですか？')) {
+                functionSave();
+            }
+            return false;
+        }
+    </script>
+</apex:page>

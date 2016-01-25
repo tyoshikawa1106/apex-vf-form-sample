@@ -1,0 +1,14 @@
+<apex:page controller="ContactFormController" tabStyle="Contact" showHeader="true" sidebar="false" id="page">
+    <apex:sectionHeader title="T.Yoshikawa Labs" subTitle="Visualforce Sample Pages" />
+    <apex:form id="form">
+        <apex:pageBlock id="block" mode="edit">
+            <apex:pageMessages id="msg" />
+            <apex:pageBlockButtons location="bottom" id="buttons">
+                <apex:commandButton value=" 完了 " action="{!doComplate}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1">
+                <apex:outputText value="正常に登録できました。完了ボタンをクリックすると詳細ページに移動します。" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
